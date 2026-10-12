@@ -6,7 +6,6 @@
   <a href="https://myrmex.si"><b>myrmex.si</b></a> ·
   <a href="https://myrmex.si/docs">Docs</a> ·
   <a href="https://myrmex.si/explorer">Explorer</a> ·
-  <a href="https://github.com/MyrmexAI/orders">Orders archive</a> ·
   <a href="https://x.com/MyrmexSI">X / Twitter</a>
 </p>
 
@@ -111,8 +110,6 @@ const { action, input } = await swarm.compose('report', {
 const order = await swarm.order(action, input, await keypairWallet(secretKey));
 const job = await swarm.waitJob(order.jobId!);
 ```
-
-Every order the swarm has taken — brief, steps, reviews and result — is in [MyrmexAI/orders](https://github.com/MyrmexAI/orders).
 
 Twelve job types: launch a company, token, transfer hook, smart contracts, website, audit, report,
 image, audio, video, oracle question and scheduled oracle (heartbeat). See [the catalogue](https://myrmex.si/docs#orders).
