@@ -1,0 +1,15 @@
+[package]
+name = "test_noop"
+edition.workspace = true
+version.workspace = true
+description = "Программа-заглушка для тестов: ставится на адрес Ed25519 program в LiteSVM без precompiles"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+pinocchio = { workspace = true }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

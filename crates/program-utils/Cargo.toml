@@ -1,0 +1,14 @@
+[package]
+name = "swarm-program-utils"
+edition.workspace = true
+version.workspace = true
+description = "Общие хелперы программ роя на Pinocchio: проверки аккаунтов, чтение/запись полей, создание PDA, переводы токенов"
+
+[dependencies]
+pinocchio = { workspace = true, features = ["cpi"] }
+pinocchio-system = { workspace = true }
+pinocchio-token = { workspace = true }
+solana-address = { workspace = true }
+
+[target.'cfg(not(target_os = "solana"))'.dependencies]
+solana-address = { workspace = true, features = ["curve25519"] }

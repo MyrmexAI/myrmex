@@ -1,0 +1,25 @@
+[package]
+name = "agent_registry"
+edition.workspace = true
+version.workspace = true
+description = "Реестр агентов (аналог ERC-8004): документ агента на каждое место"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+pinocchio = { workspace = true, features = ["cpi"] }
+solana-address = { workspace = true }
+shank = { workspace = true }
+swarm-program-utils = { path = "../../crates/program-utils" }
+
+[dev-dependencies]
+swarm-test-utils = { path = "../../crates/test-utils" }
+solana-instruction = "3"
+solana-keypair = "3"
+solana-pubkey = "4"
+solana-signer = "3"
+solana-account = "4"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

@@ -1,0 +1,32 @@
+{
+  "name": "myrmex",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "clients/ts/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "idl": "node scripts/idl.mjs",
+    "codegen": "node scripts/codama.mjs",
+    "generate": "npm run idl && npm run codegen",
+    "typecheck": "tsc -p .",
+    "test": "tsx --test --test-concurrency=1 packages/*/test/*.test.ts apps/worker/test/*.test.ts",
+    "test:programs": "bash scripts/program-test.sh seat_registry agent_registry reputation records_root orders_escrow distributor oracle_verifier treasury_split"
+  },
+  "devDependencies": {
+    "@codama/nodes-from-anchor": "1.5.6",
+    "@codama/renderers-js": "2.5.0",
+    "@solana-program/system": "0.15.0",
+    "@solana-program/token": "0.17.0",
+    "@types/node": "26.6.4",
+    "codama": "1.11.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

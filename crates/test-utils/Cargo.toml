@@ -1,0 +1,19 @@
+[package]
+name = "swarm-test-utils"
+edition.workspace = true
+version.workspace = true
+description = "Хелперы тестов программ роя: LiteSVM, mint и токен-аккаунты, отправка транзакций, сдвиг часов"
+publish = false
+
+[dependencies]
+litesvm = "=0.17.0"
+solana-account = "4"
+solana-clock = "3"
+solana-instruction = "3"
+solana-keypair = "3"
+solana-program-pack = "3"
+solana-pubkey = "4"
+solana-signer = "3"
+solana-transaction = "4"
+spl-token-interface = "3"
+sha2 = "0.10"
